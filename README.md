@@ -14,7 +14,7 @@ Objectives
 
 first solo project, the objectives were to lay the foundations and mastery of web layout. With the help of some specific implementation in Javascript.
 
-
+Functional website with a sales section where you can access to see the characteristics of a home as an example.
 #
 #
 
