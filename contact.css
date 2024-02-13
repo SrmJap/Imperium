@@ -1,0 +1,361 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(/fonts/Avenir-Book.ttf);
+}
+
+* {
+ 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+html {
+  font-size: 20px;
+  color: black;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+body {
+  font-family: "Avenir", sans-serif;
+}
+
+@media (max-width: 720px) {
+  nav {
+    width: 450px;
+  }
+}
+
+@media (max-width: 440px) {
+  nav {
+    display: flex;
+  }
+}
+
+header {
+  background-color: white;
+  box-shadow: 1.5px 1.5px 4px #b3b3b3;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  z-index: 10;
+  transition: 600 all ease-in-out;
+}
+
+header nav {
+  margin-right: 4em;
+}
+
+header img {
+  height: 60px;
+  width: auto;
+}
+
+header nav a {
+  color: #67666e;
+  margin-left: 1.5em;
+  transition: 700ms;
+}
+
+header nav a:hover {
+  color: #a97c50;
+}
+
+.request {
+  width: 80%;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.request p {
+  color: #67666e;
+}
+
+footer {
+  margin-top: 20vh;
+  background-color: #424242;
+  width: 100%;
+  display: flex;
+  color: white;
+  overflow: hidden;
+}
+
+.foot {
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.footh1 {
+  color: #a97c50;
+}
+
+.finsigths {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.finsigths h1 {
+  color: #a97c50;
+}
+
+.fcompany {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.fcompany h1 {
+  color: #a97c50;
+}
+
+.ficon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  font-size: 14px;
+}
+
+.ficon h1 {
+  color: #a97c50;
+}
+
+.ficon p {
+  margin-top: 10px;
+}
+
+.ficon input {
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 0rem 2rem;
+}
+
+.fcompany a img {
+  width: 30px;
+}
+.formcontainer {
+  margin-top: 10vh;
+}
+
+.formcontainer h1 {
+  text-align: center;
+
+  padding: 20px;
+}
+
+.form p {
+  text-align: center;
+  margin: auto;
+  width: 60%;
+}
+
+input {
+  border: none;
+  border-bottom: 1.5px solid #a97c50;
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.phone {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.adress {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.text-con {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+.text-con label {
+  margin-left: 200px;
+  color: #67666e;
+}
+.text-con textarea {
+  border: 1px solid #a97c50;
+  margin: auto;
+  margin-top: 30px;
+  width: 50%;
+  justify-content: center;
+}
+input:focus {
+  outline: none;
+  border-bottom: 1.5px solid #643e18;
+}
+
+input.user {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+input.email {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label::before {
+  content: url(/img/square.svg);
+  position: relative;
+  top: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label::before {
+  cursor: pointer;
+  content: url(/img/check-square.svg);
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.formcontainer button {
+  display: flex;
+  position: relative;
+  top: 60px;
+  margin: auto;
+  border: none;
+  background-color: #a97c50;
+  color: white;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  border-radius: 0, 3em;
+  cursor: pointer;
+  transition: all ease-in-out 400ms;
+}
+
+button:hover {
+  background-color: #81501e;
+}
+
+@media (max-width: 720px) {
+  .formcontainer button footer {
+    margin-top: 50px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .text-con textarea {
+    border: 1px solid #a97c50;
+    margin: auto;
+    margin-top: 30px;
+    width: 70%;
+    justify-content: center;
+}
+  footer .ficon h1 {
+    font-size: 18px;
+  }
+
+  footer button {
+    font-size: 16px;
+    position: relative;
+    text-align: left;
+  }
+
+  footer .ficon p {
+    display: none;
+  }
+
+  footer .finsigths {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .text-con textarea {
+    border: 1px solid #a97c50;
+    margin: auto;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center;
+  }
+  footer {
+    width: 100%;
+
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .ficon h1 {
+    font-size: 18px;
+  }
+
+  footer button {
+    font-size: 16px;
+    margin-bottom: 5vh;
+  }
+
+  footer .fcompany {
+    display: flex;
+  }
+
+  .ficon form button {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+button {
+  margin-top: 15px;
+  margin-left: 100px;
+  border: none;
+  background-color: #a97c50;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  border-radius: 0, 3em;
+  cursor: pointer;
+  transition: all ease-in-out 400ms;
+}

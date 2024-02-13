@@ -1,0 +1,264 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(/fonts/Avenir-Book.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+html {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+body {
+  font-family: "Avenir", sans-serif;
+  color: #67666e;
+}
+
+@media (max-width: 720px) {
+  nav {
+    width: 450px;
+  }
+}
+
+@media (max-width: 440px) {
+  nav {
+    display: flex;
+  }
+}
+
+header {
+  background-color: white;
+  box-shadow: 1.5px 1.5px 4px #b3b3b3;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  z-index: 10;
+  transition: 600 all ease-in-out;
+}
+
+header.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+header nav {
+  margin-right: 4em;
+}
+
+header img {
+  height: 60px;
+  width: auto;
+}
+
+header nav a {
+  color: #67666e;
+  margin-left: 1.5em;
+  transition: 700ms;
+}
+
+header.transparent nav a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+header nav a:hover {
+  color: #a97c50;
+}
+.card {
+  width: 360px;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardgrid {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit ,360px);
+  grid-gap: 1.5rem;
+ justify-content: center;
+}
+.card img {
+  height: 320px;
+}
+.card .footercard {
+  padding: 0.8rem;
+  width: 100%;
+  height: 174px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card .footercard p {
+  margin-bottom: 0.5rem;
+}
+.card .footercard p {
+  font-weight: bold;
+}
+
+.card .footercard a {
+  background-color: #a97c50;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.5em 1em;
+  align-self: center;
+  transition: 400ms ease-in-out all;
+}
+.card .footercard a:hover {
+  background-color: #664626;
+}
+
+.info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+
+
+/*footer*/
+footer {
+  margin-top: 10vh;
+  background-color: #424242;
+  width: 100%;
+  display: flex;
+  color: white;
+  overflow: hidden;
+}
+.foot {
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.footh1 {
+  color: #a97c50;
+}
+
+.finsigths {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.finsigths h1 {
+  color: #a97c50;
+}
+
+.fcompany {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.fcompany h1 {
+  color: #a97c50;
+}
+
+.ficon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  font-size: 14px;
+}
+
+.ficon h1 {
+  color: #a97c50;
+}
+
+.ficon p {
+  margin-top: 10px;
+}
+
+.ficon input {
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 0rem 2rem;
+}
+.fcompany a img {
+  width: 30px;
+}
+@media (max-width: 720px) {
+  footer {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  footer .ficon h1 {
+    font-size: 18px;
+  }
+  footer button {
+    font-size: 16px;
+    position: relative;
+    text-align: left;
+  }
+  footer .ficon p {
+    display: none;
+  }
+  footer .finsigths {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  footer {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    grid-column-end: auto;
+  }
+  footer .ficon h1 {
+    font-size: 18px;
+  }
+  footer button {
+    font-size: 16px;
+    margin-bottom: 5vh;
+  }
+  footer .fcompany {
+    display: flex;
+  }
+}
+button {
+  margin-top: 15px;
+  margin-left: 100px;
+  border: none;
+  background-color: #a97c50;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  border-radius: 0, 3em;
+  cursor: pointer;
+  transition: all ease-in-out 400ms;
+}

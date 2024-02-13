@@ -1,0 +1,617 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(/fonts/Avenir-Book.ttf);
+}
+
+* {
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.titulohouse { text-align: center ;
+  padding-bottom: 2rem;
+  top: 10rem;
+  position: relative;
+}
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
+
+body {
+ 
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  font-family: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent; 
+  scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+
+ol, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel { 
+  
+ 
+  top: 10rem;
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+}
+
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  background-color: transparent;
+  counter-increment: item;
+}
+
+.carousel__slide:nth-child(even) {
+  background-color: transparent;
+}
+
+.carousel__slide:before {
+  content: counter(item);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-40%,70px);
+  color: #fff;
+  font-size: 2em;
+}
+
+.carousel__snapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__snapper {
+    animation-name: none;
+  }
+}
+.carousel__snapper img {
+  width: auto;
+  height: auto;
+  animation-name: none;
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+  animation-name: none;
+}
+
+.carousel__navigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+  display: inline-block;
+}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #a97c50;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 0;
+  margin-top: 37.5%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+  left: -1rem;
+}
+
+.carousel::after,
+.carousel__next {
+  right: -1rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  z-index: 1;
+  background-color: #a97c50;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+html {
+  font-size: 20px;
+  color: black;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+body {
+  font-family: "Avenir", sans-serif;
+}
+@media (min-width: 1200px) {
+  .carousel__snapper img {
+    width:100%;
+    height: 100vh;
+   
+  }
+
+  
+}
+
+@media (max-width: 720px) {
+  nav {
+    width: 450px;
+  }
+}
+
+@media (max-width: 440px) {
+  nav {
+    display: flex;
+  }
+}
+
+header {
+  background-color: white;
+  box-shadow: 1.5px 1.5px 4px #b3b3b3;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  z-index: 10;
+  transition: 600 all ease-in-out;
+}
+
+header nav {
+  margin-right: 4em;
+}
+
+header img {
+  height: 60px;
+  width: auto;
+}
+
+header nav a {
+  color: #67666e;
+  margin-left: 1.5em;
+  transition: 700ms;
+}
+
+header nav a:hover {
+  color: #a97c50;
+}
+
+
+
+.info {
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.infoprint {
+  
+  display: flex;
+  flex-direction: column;
+  transition: all 700ms ease-in-out;
+}
+
+.inquire {
+  margin: auto;
+
+  height: 40px;
+  width: 80px;
+  
+}
+
+.inquire a {
+  color: white;
+  
+  
+}
+
+.infoprint a {
+  color: #a97c50;
+  margin: auto;
+}
+
+.infoimg {
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
+
+  width: 25px;
+}
+
+.infoprint button {
+  margin: auto;
+}
+
+.midinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.midinfo img {
+  margin: 20px;
+
+  width: 45px;
+}
+
+.midlabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.midlabel p {
+  position: relative;
+  margin: 24px;
+  justify-content: center;
+  bottom: 30px;
+}
+
+.midother {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 50px;
+  text-align: center;
+}
+
+.mid-item3 {
+  text-align: left;
+}
+
+.table-info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.map {
+  margin-top: 50px;
+  width: 100%;
+  justify-content: center;
+}
+
+table td {
+  text-align: left;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.location {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-top: 80px;
+}
+
+.location-station li {
+  list-style: none;
+  text-align: left;
+}
+
+.location-station p {
+  text-align: left;
+}
+
+.location-station h1 {
+  text-align: left;
+}
+
+.gmaps {
+  width: 100%;
+}
+
+/*footer*/
+
+footer {
+  margin-top: 20vh;
+  background-color: #424242;
+  width: 100%;
+  display: flex;
+  color: white;
+  overflow: hidden;
+}
+
+.foot {
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.footh1 {
+  color: #a97c50;
+}
+
+.finsigths {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.finsigths h1 {
+  color: #a97c50;
+}
+
+.fcompany {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem 1.5em;
+}
+
+.fcompany h1 {
+  color: #a97c50;
+}
+
+.ficon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+  font-size: 14px;
+}
+
+.ficon h1 {
+  color: #a97c50;
+}
+
+.ficon p {
+  margin-top: 10px;
+}
+
+.ficon input {
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 0rem 2rem;
+}
+
+.fcompany a img {
+  width: 30px;
+}
+
+@media (max-width: 720px) {
+  .location {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .location-station {
+    margin: auto;
+  }
+
+  .gmaps {
+    margin-top: 30px;
+  }
+
+  footer {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  footer .ficon h1 {
+    font-size: 18px;
+  }
+
+  footer button {
+    font-size: 16px;
+    position: relative;
+    text-align: left;
+  }
+
+  footer .ficon p {
+    display: none;
+  }
+
+  footer .finsigths {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  .info p {
+    font-size: 16px;
+  }
+
+  .table-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .gmaps {
+    display: none;
+  }
+
+  footer {
+    width: 100%;
+
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .ficon h1 {
+    font-size: 18px;
+  }
+
+  footer button {
+    font-size: 16px;
+    margin-bottom: 5vh;
+  }
+
+  footer .fcompany {
+    display: flex;
+  }
+
+  .ficon form button {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  
+}
+
+button {
+  margin-top: 15px;
+  margin-left: 100px;
+  border: none;
+  background-color: #a97c50;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  border-radius: 0, 3em;
+  cursor: pointer;
+  transition: all ease-in-out 400ms;
+}
